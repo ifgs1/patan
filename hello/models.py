@@ -14,7 +14,7 @@ class Usuario(models.Model):
     email = models.EmailField(max_length=70,blank=True, null= True, unique= True)
     user = models.OneToOneField(User,null=True)
 
-class Trayecto(models.Model):
+class Proyecto(models.Model):
      name = models.CharField(max_length=50, blank=True)
      price = models.CharField(max_length=50, blank=True)
      description = models.CharField(max_length=250, blank=True)

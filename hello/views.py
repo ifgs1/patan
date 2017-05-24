@@ -8,7 +8,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.core.mail import send_mail, EmailMultiAlternatives
 
 from gettingstarted.settings import BASE_DIR, PROJECT_ROOT
-from models import Trayecto
+from models import Proyecto
 from models import Usuario
 import os
 import time
@@ -105,7 +105,7 @@ def createRide(request):
     if request.method == 'POST':
 
      jsonProject = json.loads(request.body)
-     trayecto = Trayecto()
+     trayecto = Proyecto()
      print str("Entro ")
 
      print str("pasooooo ")
@@ -130,7 +130,7 @@ def createRide(request):
      return HttpResponse(serializers.serialize("json",{trayecto}))
 
     if request.method == 'GET':
-        trayectos = Trayecto.objects.all()
+        trayectos = Proyecto.objects.all()
         return HttpResponse(serializers.serialize("json", trayectos))
 
         '''
@@ -179,7 +179,7 @@ def joinRide(request):
      print str("Entro ")
 
      print str("pasooooo ")
-     trayecto = Trayecto.objects.get(pk=jsonProject.get('pk'))
+     trayecto = Proyecto.objects.get(pk=jsonProject.get('pk'))
      trayecto.seats = trayecto.seats - jsonProject['seats']
      name = jsonProject['name']
      trayecto.clientes = name + ", " + trayecto.clientes
