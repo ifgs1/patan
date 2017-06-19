@@ -17,8 +17,9 @@ class Usuario(models.Model):
 class Proyecto(models.Model):
      name = models.CharField(max_length=50, blank=True)
      price = models.CharField(max_length=50, blank=True)
+     imagen = models.CharField(max_length=50, blank=True)
      description = models.CharField(max_length=250, blank=True)
-     partida = models.CharField(max_length=250, blank=True)
+     categoria = models.CharField(max_length=250, blank=True)
      latitudeOR = models.CharField(max_length=250, blank=True)
      longitudeOR = models.CharField(max_length=250, blank=True)
      latitudeDE = models.CharField(max_length=250, blank=True)

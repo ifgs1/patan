@@ -121,7 +121,16 @@ def createRide(request):
      trayecto.plates = jsonProject['plates']
      trayecto.seats = jsonProject['seats']
      trayecto.price = jsonProject['price']
-     trayecto.partida = jsonProject['partida']
+     trayecto.categoria = jsonProject['categoria']
+
+     if trayecto.categoria == "Hogar":
+        trayecto.imagen = "https://s3-eu-west-1.amazonaws.com/goleraapp/golera/hogar.png"
+     elif trayecto.categoria == "Clases":
+         trayecto.imagen = "https://s3-eu-west-1.amazonaws.com/goleraapp/golera/servicios.png"
+     elif trayecto.categoria == "Empresas":
+         trayecto.imagen = "https://s3-eu-west-1.amazonaws.com/goleraapp/golera/Compromiso-con-la-empresa.jpg"
+     else:
+         trayecto.imagen = "https://s3-eu-west-1.amazonaws.com/goleraapp/golera/tecnologia.png"
 
 
      user = Usuario.objects.get(pk=jsonProject.get('pk'))
