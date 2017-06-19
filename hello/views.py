@@ -114,12 +114,9 @@ def createRide(request):
      trayecto.description = jsonProject['description']
      trayecto.latitudeOR = jsonProject['latitudeOR']
      trayecto.longitudeOR = jsonProject['longitudeOR']
-     trayecto.latitudeDE = jsonProject['latitudeDE']
-     trayecto.longitudeDE = jsonProject['longitudeDE']
      trayecto.date_ride = jsonProject['date_ride']
      trayecto.seats = jsonProject['seats']
      trayecto.plates = jsonProject['plates']
-     trayecto.seats = jsonProject['seats']
      trayecto.price = jsonProject['price']
      trayecto.categoria = jsonProject['categoria']
 
