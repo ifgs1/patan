@@ -19,7 +19,7 @@ class Proyecto(models.Model):
      price = models.CharField(max_length=50, blank=True)
      imagen = models.CharField(max_length=50, blank=True)
      description = models.CharField(max_length=250, blank=True)
-     categoria = models.CharField(max_length=250, blank=True)
+     categoria = models.CharField(max_length=1000, blank=True)
      date_ride = models.CharField(max_length=100, blank=True)
      seats = models.BigIntegerField(blank=False, null=False)
      plates = models.CharField(max_length=50, blank=True)
